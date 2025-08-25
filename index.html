@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Vidya Bhawan Mahila Mahavidyalay, Siwan</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+ :root {
+ --primary-dark: #001f3f; /* Navy */
+ --primary-accent: #D4AF37; /* Gold */
+ --background-light: #FDFBF6;
+ --text-dark: #333333;
+ --text-light: #555555;
+ }
+ body {
+ font-family: 'Inter', sans-serif;
+ background-color: var(--background-light);
+ color: var(--text-dark);
+ }
+ h1, h2, h3, h4, h5, h6 {
+ font-family: 'Lora', serif;
+ }
+ .fade-in-up {
+ animation: fadeInUp 0.7s ease-in-out;
+ }
+ @keyframes fadeInUp {
+ from { opacity: 0; transform: translateY(20px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
+ .nav-link {
+ position: relative;
+ transition: color 0.3s;
+ }
+ .nav-link::after {
+ content: '';
+ position: absolute;
+ width: 0;
+ height: 2px;
+ bottom: -6px;
+ left: 50%;
+ background-color: var(--primary-accent);
+ transition: all 0.3s ease-in-out;
+ transform: translateX(-50%);
+ }
+ .nav-link:hover::after, .nav-link.active::after {
+ width: 70%;
+ }
+ .hero-slide {
+ display: none;
+ animation: kenburns 20s infinite;
+ }
+ .hero-slide:nth-child(1) { animation-delay: 0s; }
+ .hero-slide:nth-child(2) { animation-delay: 5s; }
+ .hero-slide:nth-child(3) { animation-delay: 10s; }
+
+ @keyframes kenburns {
+ 0% { transform: scale(1) translate(0, 0); opacity: 0; }
+ 5% { opacity: 1; }
+ 25% { transform: scale(1.1) translate(-2%, 2%); opacity: 1; }
+ 30% { opacity: 0; }
+ 100% { opacity: 0; transform: scale(1.1) translate(-2%, 2%); }
+ }
+ </style>
+</head>
+<body class="text-gray-800">
+
+ <!-- Header -->
+ <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-24">
+ <!-- Logo and College Name -->
+ <div class="flex items-center space-x-4">
+ <img src="images/logo.jpg" alt="VBMM Logo" class="h-14 w-14 rounded-full border-2 border-gray-200">
+ <div>
+ <h1 class="text-xl md:text-2xl font-bold" style="color: var(--primary-dark);">Vidya Bhawan Mahila Mahavidyalay</h1>
+ <p class="text-xs text-gray-500 tracking-wider">SIWAN, BIHAR</p>
+ </div>
+ </div>
+ <!-- Desktop Navigation -->
+ <nav class="hidden md:flex items-center space-x-10">
+ <a href="#home" class="nav-link text-gray-700 hover:text-black font-medium active">Home</a>
+ <a href="#departments" class="nav-link text-gray-700 hover:text-black font-medium">Departments</a>
+ <a href="#faculty" class="nav-link text-gray-700 hover:text-black font-medium">Faculty</a>
+ <a href="#academics" class="nav-link text-gray-700 hover:text-black font-medium">Academics</a>
+ </nav>
+ <!-- Mobile Menu Button -->
+ <div class="md:hidden">
+ <button id="mobile-menu-button" class="text-gray-700 hover:text-black focus:outline-none">
+ <i class="fas fa-bars text-2xl"></i>
+ </button>
+ </div>
+ </div>
+ </div>
+ <!-- Mobile Menu -->
+ <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+ <a href="#home" class="block py-3 px-4 text-base text-gray-700 hover:bg-gray-100 mobile-nav-link">Home</a>
+ <a href="#departments" class="block py-3 px-4 text-base text-gray-700 hover:bg-gray-100 mobile-nav-link">Departments</a>
+ <a href="#faculty" class="block py-3 px-4 text-base text-gray-700 hover:bg-gray-100 mobile-nav-link">Faculty</a>
+ <a href="#academics" class="block py-3 px-4 text-base text-gray-700 hover:bg-gray-100 mobile-nav-link">Academics</a>
+ </div>
+ </header>
+
+ <!-- Main Content Area -->
+ <main id="main-content" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+ <!-- Content will be loaded here dynamically -->
+ </main>
+
+ <!-- Footer -->
+ <footer style="background-color: var(--primary-dark);" class="text-white">
+ <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+ <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+ <!-- About VBMM -->
+ <div>
+ <h3 class="text-xl font-semibold mb-4 text-white">About VBMM</h3>
+ <p class="text-sm text-gray-300">
+ A premier institution in Siwan, dedicated to providing quality education and empowering women to become future leaders.
+ </p>
+ </div>
+ <!-- Quick Links -->
+ <div>
+ <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
+ <ul class="space-y-2 text-sm">
+ <li><a href="#academics" class="text-gray-300 hover:text-white transition-colors">Academic Calendar</a></li>
+ <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Notices</a></li>
+ <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Library</a></li>
+ <li><a href="#" class="text-gray-300 hover:text-white transition-colors">IQAC</a></li>
+ </ul>
+ </div>
+ <!-- Contact Info -->
+ <div>
+ <h3 class="text-xl font-semibold mb-4 text-white">Contact Us</h3>
+ <address class="text-sm not-italic space-y-2 text-gray-300">
+ <p><i class="fas fa-map-marker-alt mr-2 w-4 text-center"></i>Siwan, Bihar - 841226, India</p>
+ <p><i class="fas fa-phone-alt mr-2 w-4 text-center"></i>+91-123456789</p>
+ <p><i class="fas fa-envelope mr-2 w-4 text-center"></i>vbmcollegesiwan942@gmail.com</p>
+ </address>
+ </div>
+ <!-- Social Media -->
+ <div>
+ <h3 class="text-xl font-semibold mb-4 text-white">Follow Us</h3>
+ <div class="flex space-x-4">
+ <a href="#" class="text-gray-300 hover:text-white transition-colors text-2xl"><i class="fab fa-facebook-f"></i></a>
+ <a href="#" class="text-gray-300 hover:text-white transition-colors text-2xl"><i class="fab fa-instagram"></i></a>
+ <a href="#" class="text-gray-300 hover:text-white transition-colors text-2xl"><i class="fab fa-youtube"></i></a>
+ </div>
+ </div>
+ </div>
+ <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+ <p>&copy; <span id="current-year"></span> Vidya Bhawan Mahila Mahavidyalay. All Rights Reserved.</p>
+ </div>
+ </div>
+ </footer>
+
+ <script>
+ // --- DATA ---
+ const departments = [
+ { id: 1, name: 'Psychology', head: 'Dr. Nidhi Tripathi', faculty: ['Dr. Huma Kamaal', 'Dr. Sarvat Afreen'], image: 'images/Psychology.jpg', description: 'Understanding human behavior, mind, and emotions. Focuses on human thoughts, emotions, and behavior through theory, experiments, and counseling.' },
+ { id: 2, name: 'Geography', head: 'Mrs. Swathi Sinha', faculty: [], image: 'images/geography.jpg', description: 'Exploring people, places, and environment. Covers physical and human geography with fieldwork, maps, and sustainability studies.' },
+ { id: 3, name: 'Hindi', head: 'Dr. Archana Kumari', faculty: ['Dr. Puja Tiwari'], image: 'images/hindi.jpeg', description: 'Promoting Hindi language and literature. Encourages study of classical and modern Hindi with focus on writing and cultural heritage.' },
+ { id: 4, name: 'Sanskrit', head: 'Dr. Sanjeevani Arya', faculty: [], image: 'images/sanskrit2.jpg', description: 'Preserving ancient wisdom through Sanskrit. Offers insights into Vedic texts, poetry, and philosophy linking past with present.' },
+ { id: 5, name: 'Philosophy', head: 'Dr. Puja Kumari', faculty: ['Dr. Rita Sharma'], image: 'images/philosophy2.png', description: 'Examining life, ethics, and knowledge. Develops critical thinking through Indian and Western philosophical traditions.' },
+ { id: 6, name: 'English', head: 'Dr. Erum Altaf', faculty: [], image: 'images/english2.jpg', description: 'Enhancing language and literature skills. Focuses on global literature, communication, and creativity for diverse careers.' },
+ { id: 7, name: 'Home Science', head: 'N/A', faculty: ['Dr. Manisha Kumari', 'Dr. Puja Rani', 'Dr. Mira Kumari'], image: 'images/homesci.jpeg', description: 'Science and skills for better living. Covers nutrition, health, textiles, and resource management for practical growth.' },
+ { id: 8, name: 'Political Science', head: 'N/A', faculty: ['Dr. Anshika Singh', 'Mr. Jitendra Prasad'], image: 'images/polsci.jpg', description: 'Understanding politics and governance. Studies Indian democracy, global politics, and administration for future leadership.' }
+ ];
+
+ const faculty = [
+ { id: 1, name: 'Dr. Puja Kumari', designation: 'Assistant Professor', department: 'Philosophy', qualification: 'Ph.D.', expertise: 'Indian Ethics', experience: 'Eight years of teaching in UG and two years in PG', email: 'pujaguptavbm@gmail.com', image: 'images/dr. puja kumari.jpg' },
+ { id: 2, name: 'Dr. Rita Sharma', designation: 'Assistant Professor', department: 'Philosophy', qualification: 'M.A. Ph.D. from Ranchi University', expertise: 'Indian Logic, Western Logic, Contemporary Indian Philosophy', responsibilities: ['NSS Programme officer', 'Nodal officer Sehat Kendra', 'Nodal officer Red Ribbon Club', 'Incharge of Scout Guide', 'Convenor - Health and Fitness Cell, Minority Cell, Alumni Cell'], email: 'drritasharma12345@gmail.com', whatsapp: '7209438566', image: 'images/dr. rita sharma.jpg' },
+ { id: 3, name: 'Dr. Puja Rani', designation: 'Assistant Professor', department: 'Home Science', qualification: 'B.Sc, M.Sc, Ph.D', expertise: 'Food and Nutrition', contact: '+91-9525845921', email: 'pujarani13190@gmail.com', image: 'images/dr. puja rani.jpg' },
+ { id: 4, name: 'Dr. Pooja Tiwari', designation: 'Assistant Professor', department: 'Hindi', qualification: 'UGC NET/JRF, Ph.D Hindi', email: 'tipu1615@gmail.com', contact: '9559918846', image: 'images/dr. pooja tiwari.jpg' },
+ { id: 5, name: 'Swati Sinha', designation: 'Assistant Professor', department: 'Geography', qualification: 'M.A from Jamia Millia Islamia, M.Phil from Jawaharlal Nehru University, UGC-NET & JRF', expertise: 'Agricultural Geography, Natural Resource Management, Gender Geography', responsibilities: ['Routine Incharge', 'Convenor: Women Empowerment Cell, Library Advisory Cell & Environmental Cell of IQAC'], email: 'swati.jamia@gmail.com', whatsapp: '9958496189', image: 'images/swati sinha.jpg' },
+ { id: 6, name: 'Dr. Nidhi Tripathi', designation: 'Assistant Professor', department: 'Psychology', qualification: 'NET, Ph.D', expertise: 'Organizational Behaviour, Social Psychology, Guidance & Counselling', experience: '10 yrs. (Research & Teaching)', image: 'images/dr. nidhi tripathi.jpg' },
+ { id: 7, name: 'Dr. Sarwat Afrin', designation: 'Assistant Professor', department: 'Psychology', qualification: 'Ph.D, NET, M.Phil', expertise: 'Psychology', experience: '11 months', image: 'images/dr. sarwat afrin.jpg' },
+ { id: 8, name: 'Dr. Erum Altaf', designation: 'Assistant Professor & H.o.D', department: 'English', qualification: 'NET, Ph.D.', expertise: 'Indian Women Writing, Feminism, English Language Teaching, Communication Skills', experience: '5 years', awards: 'Awarded with the Savitribai Phule National Award', email: 'erumaltaf.siwan@gmail.com', image: 'images/erum altaf.jpg' },
+ { id: 9, name: 'Dr. Huma Kamaal', designation: 'Assistant Professor', department: 'Psychology', image: 'https://placehold.co/400x400/001f3f/FFFFFF?text=Dr.+Huma+K' },
+ { id: 10, name: 'Dr. Archana Kumari', designation: 'Head of Department', department: 'Hindi', image: 'https://placehold.co/400x400/F59E0B/FFFFFF?text=Dr.+Archana+K' },
+ { id: 11, name: 'Dr. Sanjeevani Arya', designation: 'Assistant Professor', department: 'Sanskrit',qualification:'M.A. in sanskrit literature from BHU, Aacharya in sanskrit grammar(SSVV),PhD(BHU)',expertise:'Sanskrit grammar, Vaidic grammar and Vedas', image: 'images/Sanjeevni arya.jpg' },
+ { id: 12, name: 'Dr. Manisha Thakur', designation: 'Assistant Professor', department: 'Home Science',qualification:'M.H.Sc(Master in Home Science),NET and PhD',expertise:'Clothing and Textile',experience:'More than 9 yrs of experience as guest faculty in Govt Women polytechnic college,Jabalpur,MP', email:'maneeshathakur09@gmail.com',whatsapp:'9555442610',image: 'images/maneesha_thakur.png' },
+ { id: 13, name: 'Dr. Kumari Meera gunjan', designation: 'Assistant Professor', department: 'Home Science',  qualification: 'B.A., M.A.,Ph.D',expertise:'Human development',email: 'meeragunjan0055@gmail.com', whatsapp: '9097824850', image: 'images/dr. kumari meera gunjan.jpg' },
+ { id: 14, name: 'Dr. Anshika Singh', designation: 'Assistant Professor', department: 'Political Science',qualification:'M.A(Gold medalist),NET, Phd(Gold medalist) from University of Lucknow,UP',expertise:'Indian political system and political theory, WPT', responsibilities: ['Coordinator I.Q.A.C','C.L.C incharge','Service book incharge','Scout guide incharge', 'Convenor:Anti ragging Cell, Research Promotion Cell , Sports Cell'],   image: 'images/dr. anshika singh.jpg' },
+ { id: 15, name: 'Mr. Jitendra Prasad', designation: 'Assistant Professor', department: 'Political Science', qualification: 'B.A from Patna University, M.A from Patna University, UGC-NET ,LLB from Patna University, PhD from J.P. University', image: 'images/jitendra_prasad.jpeg' }
+ ];
+
+ // --- PAGE TEMPLATES ---
+
+ const homePageTemplate = `
+ <div class="fade-in-up">
+ <!-- Hero Section -->
+ <div class="relative w-full mx-auto overflow-hidden rounded-2xl shadow-2xl" style="height: 65vh;">
+ <div class="absolute inset-0 w-full h-full">
+ <img src="images/college_gate.jpg" alt="Vidya Bhawan Mahila Mahavidyalay Entrance Gate" class="hero-slide w-full h-full object-cover">
+ <img src="images/building2.webp" alt="Vidya Bhawan Mahila Mahavidyalay Building" class="hero-slide w-full h-full object-cover">
+ <img src="images/studentss.jpg" alt="Empowering Future Leaders" class="hero-slide w-full h-full object-cover">
+ </div>
+ <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-16">
+ <h2 class="text-4xl md:text-6xl font-bold text-white text-center px-4 leading-tight shadow-lg">Empowering Women Through Education</h2>
+ </div>
+ </div>
+
+ <!-- Principal's Message -->
+ <section class="py-20 my-16">
+ <div class="container mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+ <div class="md:col-span-4">
+ <div class="relative">
+ <div class="absolute -inset-2 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full blur-xl opacity-20"></div>
+ <img src="images/principal.jpeg" alt="Principal Prof. Chandra Bhusan Singh" class="relative rounded-full shadow-2xl mx-auto border-4 border-white">
+ </div>
+ </div>
+ <div class="md:col-span-8">
+ <h2 class="text-4xl font-bold mb-4" style="color: var(--primary-dark);">A Message from the Principal</h2>
+ <p class="text-gray-500 mb-4 italic text-lg">"It is with immense pleasure that I welcome you to Vidya Bhawan Mahila Mahavidyalaya..."</p>
+ <p class="text-gray-600 leading-relaxed">At Vidya Bhawan, we believe that education is not merely about acquiring knowledge; it's about fostering critical thinking, nurturing creativity, and instilling the confidence to face the world's challenges. Our mission is to provide a supportive and intellectually stimulating environment where every student can discover her potential, explore her passions, and grow into a responsible and compassionate citizen.</p>
+ <p class="mt-6 font-semibold text-lg" style="color: var(--primary-dark);">Prof. Chandra Bhusan Singh</p>
+ <p class="text-sm text-gray-500">Principal, Vidya Bhawan Mahila College, Siwan</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- History Section -->
+<section class="py-20 my-16">
+  <div class="container mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+    <!-- Image -->
+    <div class="md:col-span-4">
+      <div class="relative">
+        <div class="absolute -inset-2 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full blur-xl opacity-20"></div>
+        <img src="images/logo.jpg" alt="College History" class="relative rounded-2xl shadow-2xl mx-auto border-4 border-white">
+      </div>
+    </div>
+    <!-- Text -->
+    <div class="md:col-span-8">
+      <h2 class="text-4xl font-bold mb-4" style="color: var(--primary-dark);">Our History</h2>
+      <p class="text-gray-600 leading-relaxed">
+Vidya Bhawan Mahila Mahavidyalaya, Siwan came into existence in 1977. It is a constituent college in Bihar that aims to provide quality education to women within its campus spanning 7 acres. UG courses are B.Sc and BA—full-time three-year courses.
+The college has made an earnest endeavour to avail most of the facilities needed for the all-round development of its students. The library—one of the important centres for academic resources—stocks more than 3,896 books. It is updated with new publications and journals regularly on the recommendations from the departments. The college also offers a small reading room facility to the students and teachers with a congenial atmosphere meant for study and research. A playground is there on the campus for outdoor sports meant for the sports-loving students. A large hall for indoor sports is under construction with financial assistance from UGC. The fast developments in the field of technology have not bypassed the institution either, with 20 computers, one laptop, printers, scanners, and internet connectivity in most of the departments. LCDs in the Botany, Zoology, and Chemistry departments further supplement the teaching-learning process.
+
+Vidya Bhawan Mahila Mahavidyalaya offers two major undergraduate courses to students: B.Sc. and BA. The course duration for both of these is three years, with a full-time study mode.
+
+The aim of women's education is highly reflected in the college by providing opportunities to female students so that they can pursue higher education in science and arts streams.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Highlights Section -->
+<section class="py-20 my-16 bg-amber-50">
+  <div class="container mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+    <!-- Text -->
+    <div class="md:col-span-8 order-2 md:order-1">
+      <h2 class="text-4xl font-bold mb-4" style="color: var(--primary-dark);">Highlights</h2>
+      <ul class="list-disc pl-6 text-gray-600 space-y-2">
+        <li>Accredited and recognized by NAAC.</li>
+        <li>Affiliated to Jai Prakash University.</li>
+        <li>Diverse academic programs across Arts, Science, and Commerce.</li>
+        <li>Highly qualified and dedicated faculty members.</li>
+        <li>Cultural, literary, and sports activities that ensure holistic development.</li>
+      </ul>
+    </div>
+    <!-- Image -->
+    <div class="md:col-span-6 order-1 md:order-2">
+      <div class="relative">
+        <div class="absolute -inset-2 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full blur-xl opacity-20"></div>
+        <img src="images/studentss.jpg" alt="College Highlights" class="relative rounded-2xl shadow-2xl mx-auto border-4 border-white">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <!-- Mission & Vision -->
+ <section class="grid md:grid-cols-2 gap-10 my-16">
+ <div class="p-8 rounded-xl shadow-lg border border-gray-200 bg-white">
+ <h3 class="text-3xl font-bold mb-3" style="color: var(--primary-dark);">Our Vision</h3>
+ <p style="color: var(--text-light);">To be a leading institution of higher learning for women, recognized for its academic excellence, fostering social responsibility, and empowering students to become confident leaders and change-makers in a globalized world.</p>
+ </div>
+ <div class="p-8 rounded-xl shadow-lg border border-gray-200 bg-white">
+ <h3 class="text-3xl font-bold mb-3" style="color: var(--primary-dark);">Our Mission</h3>
+ <p style="color: var(--text-light);">To provide a vibrant and intellectually stimulating academic environment, cultivate critical thinking and creativity, and instill strong ethical values to create compassionate and responsible citizens.</p>
+ </div>
+ </section>
+ 
+ <!-- Notices Section -->
+ <section class="my-16">
+ <h2 class="text-4xl font-bold text-center mb-10" style="color: var(--primary-dark);">Notices & Announcements</h2>
+ <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 max-w-4xl mx-auto">
+ <ul class="space-y-4">
+ <li class="flex items-center p-4 border-b border-gray-100 hover:bg-gray-50 rounded-md transition-colors">
+ <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mr-4">New</span>
+ <p class="font-medium text-gray-800 flex-1">Schedule for B.A. Part II Internal Examinations.</p>
+ <p class="text-sm text-gray-500">Aug 25, 2025</p>
+ </li>
+ <li class="flex items-center p-4 border-b border-gray-100 hover:bg-gray-50 rounded-md transition-colors">
+ <p class="font-medium text-gray-800 flex-1">Notice regarding scholarship form submission deadline.</p>
+ <p class="text-sm text-gray-500">Aug 22, 2025</p>
+ </li>
+ <li class="flex items-center p-4 hover:bg-gray-50 rounded-md transition-colors">
+ <p class="font-medium text-gray-800 flex-1">Workshop on "Effective Communication Skills" by the English Dept.</p>
+ <p class="text-sm text-gray-500">Aug 20, 2025</p>
+ </li>
+ </ul>
+ </div>
+ </section>
+ </div>
+ `;
+
+ const departmentsPageTemplate = `
+ <div class="fade-in-up">
+ <h2 class="text-4xl font-bold text-center mb-12" style="color: var(--primary-dark);">Our Academic Departments</h2>
+ <div id="departments-grid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+ ${departments.map(dept => `
+ <div class="bg-white rounded-xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 border border-gray-200">
+ <div class="overflow-hidden h-52">
+ <img src="${dept.image}" alt="${dept.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+ </div>
+ <div class="p-6">
+ <h3 class="text-2xl font-bold mb-2" style="color: var(--primary-dark);">${dept.name}</h3>
+ <p class="text-gray-600 text-sm mb-6 h-20">${dept.description}</p>
+ <button onclick="showDepartmentDetail(${dept.id})" class="w-full font-semibold text-sm py-3 rounded-lg transition-colors" style="background-color: var(--primary-dark); color: white;">View Details</button>
+ </div>
+ </div>
+ `).join('')}
+ </div>
+ <div id="department-detail" class="hidden mt-12"></div>
+ </div>
+ `;
+
+ const facultyPageTemplate = `
+ <div class="fade-in-up">
+ <h2 class="text-4xl font-bold text-center mb-12" style="color: var(--primary-dark);">Our Esteemed Faculty</h2>
+ <div id="faculty-grid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+ ${faculty.map(f => `
+ <div class="bg-white rounded-xl shadow-lg text-center p-6 transform hover:-translate-y-2 transition-transform duration-300 border border-gray-200">
+ <img src="${f.image}" alt="${f.name}" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-md">
+ <h3 class="text-xl font-bold" style="color: var(--primary-dark);">${f.name}</h3>
+ <p class="text-gray-500 text-sm">${f.designation}</p>
+ <p style="color: var(--primary-dark);" class="font-medium text-sm">${f.department}</p>
+ <button onclick="showFacultyDetail(${f.id})" class="mt-4 w-full text-sm font-semibold py-2 rounded-lg transition-colors" style="background-color: var(--primary-accent); color: var(--primary-dark);">View Profile</button>
+ </div>
+ `).join('')}
+ </div>
+ <div id="faculty-detail" class="hidden mt-12"></div>
+ </div>
+ `;
+
+ const academicsPageTemplate = `
+ <div class="fade-in-up">
+ <h2 class="text-4xl font-bold text-center mb-12" style="color: var(--primary-dark);">Academics</h2>
+ 
+ <div class="space-y-16">
+
+
+ <!-- Holiday Sheet -->
+ <section>
+ <h3 class="text-3xl font-semibold mb-6" style="color: var(--primary-dark);"><i class="fas fa-umbrella-beach mr-3 text-gray-400"></i>Holiday Sheet (2025)</h3>
+ <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 overflow-x-auto">
+ <table class="w-full text-left">
+ <thead class="border-b-2 border-gray-200">
+ <tr>
+ <th class="p-4 font-semibold text-sm uppercase tracking-wider">Date</th>
+ <th class="p-4 font-semibold text-sm uppercase tracking-wider">Day</th>
+ <th class="p-4 font-semibold text-sm uppercase tracking-wider">Holiday</th>
+ </tr>
+ </thead>
+ <tbody class="divide-y divide-gray-100">
+  <tr>
+  <td class="p-4">1 Jan 2025</td>
+  <td class="p-4">Wednesday</td>
+  <td class="p-4">New Year</td>
+</tr>
+<tr>
+  <td class="p-4">6 Jan 2025</td>
+  <td class="p-4">Monday</td>
+  <td class="p-4">Guru Gobind Singh Jayanti</td>
+</tr>
+<tr>
+  <td class="p-4">14 Jan 2025</td>
+  <td class="p-4">Tuesday</td>
+  <td class="p-4">Makar Sankranti</td>
+</tr>
+<tr>
+  <td class="p-4">24 Jan 2025</td>
+  <td class="p-4">Friday</td>
+  <td class="p-4">Karpoori Thakur Jayanti</td>
+</tr>
+<tr>
+  <td class="p-4">26 Jan 2025</td>
+  <td class="p-4">Sunday</td>
+  <td class="p-4">Republic Day</td>
+</tr>
+<tr>
+  <td class="p-4">3 Feb 2025</td>
+  <td class="p-4">Monday</td>
+  <td class="p-4">Vasant Panchami</td>
+</tr>
+<tr>
+  <td class="p-4">12 Feb 2025</td>
+  <td class="p-4">Wednesday</td>
+  <td class="p-4">Sant Ravidas Jayanti</td>
+</tr>
+<tr>
+  <td class="p-4">26 Feb 2025</td>
+  <td class="p-4">Wednesday</td>
+  <td class="p-4">Maha Shivratri</td>
+</tr>
+<tr>
+  <td class="p-4">14 Mar 2025</td>
+  <td class="p-4">Friday</td>
+  <td class="p-4">Holi (Holika Dahan)</td>
+</tr>
+<tr>
+  <td class="p-4">15-16 Mar 2025</td>
+  <td class="p-4">Saturday-Sunday</td>
+  <td class="p-4">Holi</td>
+</tr>
+<tr>
+  <td class="p-4">22 Mar 2025</td>
+  <td class="p-4">Saturday</td>
+  <td class="p-4">Bihar Diwas</td>
+</tr>
+<tr>
+  <td class="p-4">31 Mar-1 Apr 2025</td>
+  <td class="p-4">Monday-Tuesday</td>
+  <td class="p-4">Eid-ul-Fitr</td>
+</tr>
+<tr>
+  <td class="p-4">6 Apr 2025</td>
+  <td class="p-4">Sunday</td>
+  <td class="p-4">Shree Ram Navami</td>
+</tr>
+<tr>
+  <td class="p-4">10 Apr 2025</td>
+  <td class="p-4">Thursday</td>
+  <td class="p-4">Mahavir Jayanti</td>
+</tr>
+<tr>
+  <td class="p-4">14 Apr 2025</td>
+  <td class="p-4">Monday</td>
+  <td class="p-4">Bhimrao Ambedkar Jayanti</td>
+</tr>
+<tr>
+  <td class="p-4">18 Apr 2025</td>
+  <td class="p-4">Friday</td>
+  <td class="p-4">Good Friday</td>
+</tr>
+<tr>
+  <td class="p-4">23 Apr 2025</td>
+  <td class="p-4">Wednesday</td>
+  <td class="p-4">Veer Kunwar Singh Jayanti</td>
+</tr>
+<tr>
+  <td class="p-4">1 May 2025</td>
+  <td class="p-4">Thursday</td>
+  <td class="p-4">May Day / Shram Diwas</td>
+</tr>
+<tr>
+  <td class="p-4">6 May 2025</td>
+  <td class="p-4">Tuesday</td>
+  <td class="p-4">Janaki Navami</td>
+</tr>
+<tr>
+  <td class="p-4">12 May 2025</td>
+  <td class="p-4">Monday</td>
+  <td class="p-4">Buddha Purnima</td>
+</tr>
+<tr>
+  <td class="p-4">7-8 Jun 2025</td>
+  <td class="p-4">Saturday-Sunday</td>
+  <td class="p-4">Eid-ul-Adha (Bakrid)</td>
+</tr>
+<tr>
+  <td class="p-4">11 Jun 2025</td>
+  <td class="p-4">Wednesday</td>
+  <td class="p-4">Kabir Jayanti</td>
+</tr>
+<tr>
+  <td class="p-4">6-7 Jul 2025</td>
+  <td class="p-4">Sunday-Monday</td>
+  <td class="p-4">Muharram</td>
+</tr>
+<tr>
+  <td class="p-4">4 Aug 2025</td>
+  <td class="p-4">Monday</td>
+  <td class="p-4">Ashthami Bhogini</td>
+</tr>
+<tr>
+  <td class="p-4">9 Aug 2025</td>
+  <td class="p-4">Saturday</td>
+  <td class="p-4">Rakshabandhan</td>
+</tr>
+<tr>
+  <td class="p-4">15 Aug 2025</td>
+  <td class="p-4">Friday</td>
+  <td class="p-4">Independence Day / Chellum</td>
+</tr>
+<tr>
+  <td class="p-4">16 Aug 2025</td>
+  <td class="p-4">Saturday</td>
+  <td class="p-4">Shree Krishna Janmashtami</td>
+</tr>
+<tr>
+  <td class="p-4">5 Sep 2025</td>
+  <td class="p-4">Friday</td>
+  <td class="p-4">Rajendra Prasad's birthday</td>
+</tr>
+<tr>
+  <td class="p-4">6 Sep 2025</td>
+  <td class="p-4">Saturday</td>
+  <td class="p-4">Anant Chaturdashi</td>
+</tr>
+<tr>
+  <td class="p-4">17 Sep 2025</td>
+  <td class="p-4">Wednesday</td>
+  <td class="p-4">Vishwakarma Puja</td>
+</tr>
+<tr>
+  <td class="p-4">22 Sep 2025</td>
+  <td class="p-4">Monday</td>
+  <td class="p-4">Durga Puja (Sthapana)</td>
+</tr>
+<tr>
+  <td class="p-4">29 Sep-3 Oct 2025</td>
+  <td class="p-4">Monday-Friday</td>
+  <td class="p-4">Durga Puja / Mahatma Gandhi Jayanti</td>
+</tr>
+<tr>
+  <td class="p-4">11 Oct 2025</td>
+  <td class="p-4">Saturday</td>
+  <td class="p-4">Jay Prakash Narayan Jayanti</td>
+</tr>
+<tr>
+  <td class="p-4">20-28 Oct 2025</td>
+  <td class="p-4">Monday-Tuesday</td>
+  <td class="p-4">Chhath Puja</td>
+</tr>
+<tr>
+  <td class="p-4">5 Nov 2025</td>
+  <td class="p-4">Wednesday</td>
+  <td class="p-4">Guru Nanak Jayanti / Kartik Purnima</td>
+</tr>
+<tr>
+  <td class="p-4">3 Dec 2025</td>
+  <td class="p-4">Wednesday</td>
+  <td class="p-4">Dr. Rajendra Prasad Jayanti</td>
+</tr>
+<tr>
+  <td class="p-4">25-31 Dec 2025</td>
+  <td class="p-4">Thursday-Wednesday</td>
+  <td class="p-4">Christmas / Guru Govind Singh Jayanti</td>
+</tr>
+ </tbody>
+ </table>
+ </div>
+ </section>
+ 
+ <!-- Syllabus -->
+<section>
+  <h3 class="text-3xl font-semibold mb-6" style="color: var(--primary-dark);">
+    <i class="fas fa-book-open mr-3 text-gray-400"></i>Syllabus
+  </h3>
+  
+  <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-center">
+    <p class="text-gray-600 mb-4">Click below to download the complete syllabus:</p>
+    
+    <a href="college-syllabus.pdf" target="_blank" 
+       class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition">
+       📄 Download Syllabus (PDF)
+    </a>
+  </div>
+ </div>
+ </div>
+ `;
+
+ // --- ROUTING AND RENDERING ---
+ const mainContent = document.getElementById('main-content');
+
+ function renderPage(page) {
+ mainContent.innerHTML = ''; // Clear previous content
+ window.scrollTo(0, 0); // Scroll to top on page change
+
+ switch (page) {
+ case 'home':
+ mainContent.innerHTML = homePageTemplate;
+ initHeroSlider();
+ break;
+ case 'departments':
+ mainContent.innerHTML = departmentsPageTemplate;
+ break;
+ case 'faculty':
+ mainContent.innerHTML = facultyPageTemplate;
+ break;
+ case 'academics':
+ mainContent.innerHTML = academicsPageTemplate;
+ document.getElementById('syllabus-dept').addEventListener('change', showSyllabus);
+ break;
+ default:
+ mainContent.innerHTML = homePageTemplate;
+ initHeroSlider();
+ }
+ }
+ 
+ // --- DETAIL VIEW FUNCTIONS ---
+ function showDepartmentDetail(id) {
+ const dept = departments.find(d => d.id === id);
+ const detailView = document.getElementById('department-detail');
+ const gridView = document.getElementById('departments-grid');
+ 
+ const deptFaculty = faculty.filter(f => f.department === dept.name);
+
+ detailView.innerHTML = `
+ <div class="bg-white p-8 rounded-xl shadow-2xl fade-in-up border border-gray-200">
+ <button onclick="hideDetail('department')" class="mb-8 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 text-sm font-medium">&larr; Back to All Departments</button>
+ <div class="grid md:grid-cols-3 gap-8">
+ <div class="md:col-span-1">
+ <img src="${dept.image}" alt="${dept.name}" class="w-full h-auto object-cover rounded-lg shadow-md">
+ </div>
+ <div class="md:col-span-2">
+ <h2 class="text-4xl font-bold mb-4" style="color: var(--primary-dark);">${dept.name}</h2>
+ <p class="text-gray-600 leading-relaxed">${dept.description}</p>
+ <h3 class="text-2xl font-semibold mt-8 mb-4" style="color: var(--primary-dark);">Faculty Members</h3>
+ <ul class="list-disc list-inside space-y-2 text-gray-700">
+ ${dept.head !== 'N/A' ? `<li><strong>${dept.head} (Head of Department)</strong></li>` : ''}
+ ${dept.faculty.map(f => `<li>${f}</li>`).join('')}
+ ${deptFaculty.map(f => `<li>${f.name}</li>`).join('')}
+ </ul>
+ </div>
+ </div>
+ </div>
+ `;
+ gridView.classList.add('hidden');
+ detailView.classList.remove('hidden');
+ detailView.scrollIntoView({ behavior: 'smooth' });
+ }
+
+ function showFacultyDetail(id) {
+ const f = faculty.find(fac => fac.id === id);
+ const detailView = document.getElementById('faculty-detail');
+ const gridView = document.getElementById('faculty-grid');
+
+ detailView.innerHTML = `
+ <div class="bg-white p-8 rounded-xl shadow-2xl fade-in-up border border-gray-200">
+ <button onclick="hideDetail('faculty')" class="mb-8 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 text-sm font-medium">&larr; Back to All Faculty</button>
+ <div class="grid md:grid-cols-12 gap-8 items-start">
+ <div class="md:col-span-4 text-center">
+ <img src="${f.image}" alt="${f.name}" class="w-48 h-48 rounded-full mx-auto mb-4 border-4 border-white shadow-xl">
+ <h2 class="text-3xl font-bold" style="color: var(--primary-dark);">${f.name}</h2>
+ <p class="text-gray-600">${f.designation}</p>
+ <p style="color: var(--primary-dark);" class="font-semibold">${f.department}</p>
+ <div class="mt-4 text-sm text-left space-y-2 text-gray-600">
+ ${f.email ? `<p><i class="fas fa-envelope mr-2 w-4 text-center" style="color: var(--primary-accent);"></i>${f.email}</p>` : ''}
+ ${f.contact ? `<p><i class="fas fa-phone-alt mr-2 w-4 text-center" style="color: var(--primary-accent);"></i>${f.contact}</p>` : ''}
+ ${f.whatsapp ? `<p><i class="fab fa-whatsapp mr-2 w-4 text-center text-green-500"></i>${f.whatsapp}</p>` : ''}
+ </div>
+ </div>
+ <div class="md:col-span-8 space-y-6">
+ ${f.qualification ? `<div><h4 class="font-bold text-lg" style="color: var(--primary-dark);">Qualification</h4><p>${f.qualification}</p></div>` : ''}
+ ${f.expertise ? `<div><h4 class="font-bold text-lg" style="color: var(--primary-dark);">Area of Expertise</h4><p>${f.expertise}</p></div>` : ''}
+ ${f.experience ? `<div><h4 class="font-bold text-lg" style="color: var(--primary-dark);">Experience</h4><p>${f.experience}</p></div>` : ''}
+ ${f.awards ? `<div><h4 class="font-bold text-lg" style="color: var(--primary-dark);">Awards</h4><p>${f.awards}</p></div>` : ''}
+ ${f.responsibilities ? `<div><h4 class="font-bold text-lg" style="color: var(--primary-dark);">Responsibilities</h4><ul class="list-disc list-inside pl-2">${f.responsibilities.map(r => `<li>${r}</li>`).join('')}</ul></div>` : ''}
+ </div>
+ </div>
+ </div>
+ `;
+ gridView.classList.add('hidden');
+ detailView.classList.remove('hidden');
+ detailView.scrollIntoView({ behavior: 'smooth' });
+ }
+
+ function hideDetail(type) {
+ // Re-render the main page for that section to go back
+ if (type === 'department') {
+ handleNavigation('#departments');
+ } else if (type === 'faculty') {
+ handleNavigation('#faculty');
+ }
+ }
+
+ function showSyllabus(event) {
+ const deptName = event.target.value;
+ const contentDiv = document.getElementById('syllabus-content');
+ if (!deptName) {
+ contentDiv.innerHTML = '<p class="text-gray-500">Please select a department to view the syllabus.</p>';
+ return;
+ }
+ contentDiv.innerHTML = `
+ <div class="space-y-3">
+ <h4 class="text-xl font-semibold" style="color: var(--primary-dark);">Syllabus for ${deptName}</h4>
+ <a href="#" class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"><span>B.A. - Semester I</span> <i class="fas fa-download text-gray-400"></i></a>
+ <a href="#" class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"><span>B.A. - Semester II</span> <i class="fas fa-download text-gray-400"></i></a>
+ <a href="#" class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"><span>B.A. - Semester III</span> <i class="fas fa-download text-gray-400"></i></a>
+ </div>
+ `;
+ }
+
+ // --- HERO SLIDER ---
+ let slideIndex = 0;
+ let slideTimeout;
+ function initHeroSlider() {
+ clearTimeout(slideTimeout);
+ const slides = document.getElementsByClassName("hero-slide");
+ if (slides.length > 0) {
+ for (let i = 0; i < slides.length; i++) {
+ slides[i].style.display = "none";
+ }
+ slideIndex++;
+ if (slideIndex > slides.length) { slideIndex = 1 }
+ const currentSlide = slides[slideIndex - 1];
+ if (currentSlide) {
+ currentSlide.style.display = "block";
+ }
+ slideTimeout = setTimeout(initHeroSlider, 5000);
+ }
+ }
+
+ // --- NAVIGATION HANDLING ---
+ function handleNavigation(hash) {
+ const page = hash.replace('#', '') || 'home';
+ renderPage(page);
+ updateActiveLink(page);
+ }
+
+ function updateActiveLink(activePage) {
+ document.querySelectorAll('.nav-link').forEach(link => {
+ link.classList.remove('active');
+ if (link.getAttribute('href') === `#${activePage}`) {
+ link.classList.add('active');
+ }
+ });
+ }
+ 
+ // --- EVENT LISTENERS ---
+ // Handles back/forward browser buttons
+ window.addEventListener('hashchange', () => handleNavigation(window.location.hash));
+
+ window.addEventListener('DOMContentLoaded', () => {
+ document.getElementById('current-year').textContent = new Date().getFullYear();
+ 
+ // Set up navigation clicks for all nav links to ensure they always work
+ document.querySelectorAll('header a[href^="#"], footer a[href^="#"]').forEach(anchor => {
+ anchor.addEventListener('click', function (e) {
+ // We call handleNavigation directly to fix the "same hash" issue
+ handleNavigation(this.getAttribute('href'));
+ });
+ });
+
+ // Initial page load based on the URL hash
+ handleNavigation(window.location.hash);
+
+ // Mobile menu toggle
+ const mobileMenuButton = document.getElementById('mobile-menu-button');
+ const mobileMenu = document.getElementById('mobile-menu');
+ mobileMenuButton.addEventListener('click', () => {
+ mobileMenu.classList.toggle('hidden');
+ });
+ 
+ // Close mobile menu on link click
+ document.querySelectorAll('.mobile-nav-link').forEach(link => {
+ link.addEventListener('click', () => {
+ mobileMenu.classList.add('hidden');
+ });
+ });
+ });
+
+ </script>
+</body>
+</html>
