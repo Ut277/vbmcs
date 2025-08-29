@@ -700,9 +700,8 @@ The aim of women's education is highly reflected in the college by providing opp
  <p class="text-gray-600 leading-relaxed">${dept.description}</p>
  <h3 class="text-2xl font-semibold mt-8 mb-4" style="color: var(--primary-dark);">Faculty Members</h3>
  <ul class="list-disc list-inside space-y-2 text-gray-700">
- ${dept.head !== 'N/A' ? `<li><strong>${dept.head} (Head of Department)</strong></li>` : ''}
- ${dept.faculty.map(f => `<li>${f}</li>`).join('')}
- ${deptFaculty.map(f => `<li>${f.name}</li>`).join('')}
+  ${dept.head !== 'N/A' ? `<li><strong>${dept.head} (Head of Department)</strong></li>` : ''}
+  ${deptFaculty.map(f => `<li>${f.name}</li>`).join('')}
  </ul>
  </div>
  </div>
