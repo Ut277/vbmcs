@@ -648,7 +648,7 @@ The aim of women's education is highly reflected in the college by providing opp
        📄 Download Syllabus (PDF)
     </a>
   </div>
- </div>
+ </section>
  </div>
  `;
 
@@ -672,7 +672,11 @@ The aim of women's education is highly reflected in the college by providing opp
  break;
  case 'academics':
  mainContent.innerHTML = academicsPageTemplate;
- document.getElementById('syllabus-dept').addEventListener('change', showSyllabus);
+    const deptSelect = document.getElementById('syllabus-dept');
+    if (deptSelect && !deptSelect.dataset.listenerAdded) {
+        deptSelect.addEventListener('change', showSyllabus);
+        deptSelect.dataset.listenerAdded = 'true';
+    }
  break;
  default:
  mainContent.innerHTML = homePageTemplate;
